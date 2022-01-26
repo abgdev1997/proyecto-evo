@@ -13,7 +13,7 @@ const TaskList = () => {
                 YOUR TASKS:
             </div>
             {/* TODO: Aplicar un For/Map para renderizar una lista */}
-            <TaskComponent task={defaultTask}></TaskComponent>
+            <TaskComponent></TaskComponent>
         </div>
     );
 };
