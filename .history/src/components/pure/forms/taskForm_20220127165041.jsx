@@ -27,10 +27,10 @@ const TaskForm = ({add}) => {
     }
 
     return (
-        <form onSubmit={addTask} className='d-flex justify-content-center align-items-center' style={{backgroundColor:'white'}}>
+        <form onSubmit={addTask} className='d-flex justify-content-center align-items-center'>
             <div className='form-outline flex-fill'>
-                <input ref={nameRef} id='inputName' type='text' className='form-control form-control-lg'required autoFocus placeholder='Task Name'></input>
-                <input ref={descriptionRef} id='descriptionName' type='text' className='form-control form-control-lg'required placeholder='Task Description'></input>
+                <input ref={nameRef} id='inputName' type='text' className='form-control form-control-lg'required autoFocus></input>
+                <input ref={descriptionRef} id='descriptionName' type='text' className='form-control form-control-lg'required></input>
                 <label htmlFor='selectLevel' className='sr-only'>PRIORITY</label>
                 <select ref={levelRef} defaultValue={LEVELS.NORMAL} id='selectLevel'>
                     <option value={LEVELS.NORMAL}>
@@ -43,9 +43,6 @@ const TaskForm = ({add}) => {
                         BLOCKING
                     </option>
                 </select>
-                <button type='submit' className='btn btn-success btn-lg ms-2'>
-                    ADD
-                </button>
             </div>
         </form>
     );

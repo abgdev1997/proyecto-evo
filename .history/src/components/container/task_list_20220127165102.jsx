@@ -3,6 +3,7 @@ import {Task} from '../../models/levels.class'
 import { LEVELS } from '../../models/levels.enum';
 import TaskComponent from '../pure/task_component'
 import '../../styles/task.scss'
+import { serialize } from 'v8';
 import TaskForm from '../pure/forms/taskForm';
 
 const TaskList = () => {
@@ -99,7 +100,7 @@ const TaskList = () => {
                     </table>
                 </div>
             </div>
-            <TaskForm add={addTask}></TaskForm>
+            <TaskForm></TaskForm>
         </div>
     );
 };
