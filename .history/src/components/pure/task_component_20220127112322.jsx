@@ -4,7 +4,7 @@ import { Task } from '../../models/levels.class';
 import { LEVELS } from '../../models/levels.enum';
 
 
-const TaskComponent = ({task, completed, remove}) => {
+const TaskComponent = ({task}) => {
 
     useEffect(() => {
         console.log('Created task')
@@ -28,9 +28,9 @@ const TaskComponent = ({task, completed, remove}) => {
 
     function taskCompletedIcon(){
         if(task.completed){
-            return(<i onClick={() => completed(task)} className='bi bi-journal-check task-action' style={{color: 'green', fontWeight:'bold'}}></i>);
+            return(<i className='bi bi-journal-check' style={{color: 'green', fontWeight:'bold'}}></i>);
         }else{
-            return(<i onClick={() => completed(task)} className='bi bi-journal-x task-action' style={{color: 'blue', fontWeight:'bold'}}></i>);
+            (<i className='bi bi-journal-x' style={{color: 'blue', fontWeight:'bold'}}></i>)
         }
     }
 
@@ -52,7 +52,7 @@ const TaskComponent = ({task, completed, remove}) => {
             <td>
                 {/* <span className='align-middle'>{task.completed ? 'COMPLETED' : 'PENDING'}</span> */}
                 {taskCompletedIcon()}
-                <i onClick={() => remove(task)} className='bi-trash task-action' style={{color:'tomato', fontWeight:'bold'}}></i>
+                <i className='bi-trash' style={{color:'tomato', fontWeight:'bold'}}></i>
             </td>
         </tr>
 
@@ -75,9 +75,7 @@ const TaskComponent = ({task, completed, remove}) => {
 
 
 TaskComponent.propTypes = {
-    task: PropTypes.instanceOf(Task).isRequired,
-    completed: PropTypes.func.isRequired,
-    remove: PropTypes.func.isRequired,
+    task: PropTypes.instanceOf(Task)
 };
 
 
