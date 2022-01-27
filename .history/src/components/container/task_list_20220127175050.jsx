@@ -85,7 +85,7 @@ const TaskList = () => {
         }else{
             return(
                 <div>
-                    <h3>There are no tasks to show</h3>
+                    <h3>There are no tasks to show</h3>)
                     <h4>Please create a task</h4>
                 </div>
             )}          

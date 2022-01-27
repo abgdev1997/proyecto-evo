@@ -60,35 +60,27 @@ const TaskList = () => {
     }
 
     const TasksTable = () => {
-        if(tasks.length > 0){
-            return (
-                <table>
-                    <thead>
-                        <tr>
-                            <th scope='col'>TITLE</th>
-                            <th scope='col'>DESCRIPTION</th>
-                            <th scope='col'>PRIORITY</th>
-                            <th scope='col'>ACTIONS</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {tasks.map((task, index) => 
-                            <TaskComponent
-                            completed={changeCompleted}
-                            remove={deleteTask}
-                            key={index}
-                            task={task}>
-                            </TaskComponent>)}
-                    </tbody>        
-                </table>        
-            )
-        }else{
-            return(
-                <div>
-                    <h3>There are no tasks to show</h3>
-                    <h4>Please create a task</h4>
-                </div>
-            )}          
+        return (
+            <table>
+                <thead>
+                    <tr>
+                        <th scope='col'>TITLE</th>
+                        <th scope='col'>DESCRIPTION</th>
+                        <th scope='col'>PRIORITY</th>
+                        <th scope='col'>ACTIONS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {tasks.map((task, index) => 
+                        <TaskComponent
+                        completed={changeCompleted}
+                        remove={deleteTask}
+                        key={index}
+                        task={task}>
+                        </TaskComponent>)}
+                </tbody>        
+            </table>        
+        )
     }
 
     return (

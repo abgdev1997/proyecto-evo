@@ -83,12 +83,8 @@ const TaskList = () => {
                 </table>        
             )
         }else{
-            return(
-                <div>
-                    <h3>There are no tasks to show</h3>
-                    <h4>Please create a task</h4>
-                </div>
-            )}          
+            return(<h3>There are no tasks to show</h3>)
+        }          
     }
 
     return (

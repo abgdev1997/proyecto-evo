@@ -36,7 +36,7 @@ const TaskComponent = ({task, completed, remove}) => {
     }
 
     const taskCompleted = {
-        color: 'green',
+        color: 'gray',
         fontWeight: 'bold',
         textDecoration: 'line-through'
     }
