@@ -25,6 +25,7 @@ const TaskList = () => {
             console.log('TaskList component is going to unmount');
         };
     }, [tasks]);
+
     const changeCompleted = (task) => {
         console.log('Change this task:', task)
         //Conseguimos el index de la tarea que queremos cambiar
@@ -37,7 +38,7 @@ const TaskList = () => {
         setTasks(tempTasks);
     }
 
-    const deleteTask = (task) => {
+    function deleteTask = (task) => {
         console.log('Deleting this task:', task)
         //Conseguimos el index de la tarea que queremos borrar
         const index = tasks.indexOf(task);
@@ -80,7 +81,7 @@ const TaskList = () => {
                         <tbody>
                             {tasks.map((task, index) => <TaskComponent
                                                             completed={changeCompleted}
-                                                            remove={deleteTask}
+                                                            delete={deleteTask}
                                                             key={index}
                                                             task={task}>
                                                             </TaskComponent>)}
