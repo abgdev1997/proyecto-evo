@@ -23,7 +23,7 @@ const TaskList = () => {
         console.log('Task State has been modified');
         setInterval(()=>{
             setLoading(false);
-        }, 1500);
+        }, 2000);
         return () => {
             console.log('TaskList component is going to unmount');
         };

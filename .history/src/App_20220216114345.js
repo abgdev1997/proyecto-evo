@@ -5,6 +5,7 @@ function App() {
   return (
     <div className="App">
         {/* Componente de listado de tareas */}
+        <LoginForm></LoginForm>
     </div>
   );
 }

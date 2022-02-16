@@ -1,10 +1,12 @@
 import './App.css';
-import LoginForm from './components/pure/forms/loginForm';
+import TaskList from './components/container/task_list';
+import RegisterForm from './components/pure/forms/registerForm';
 
 function App() {
   return (
     <div className="App">
         {/* Componente de listado de tareas */}
+        <RegisterForm></RegisterForm>
     </div>
   );
 }

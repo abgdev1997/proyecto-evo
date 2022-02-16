@@ -12,7 +12,7 @@ const RegisterForm = () => {
         username: '',
         email: '',
         password: '',
-        confirm: '',
+        confirm: '', // to confirm password
         role: ROLES.USER
     }
 
@@ -48,7 +48,7 @@ const RegisterForm = () => {
 
     return (
         <div>
-            <h4>Register Form</h4>
+            <h4>Register Formik</h4>
             <Formik
                 initialValues = {initialValues}
                 // *** Yup Validation Schema ***
@@ -69,6 +69,8 @@ const RegisterForm = () => {
                         <Form>
                             <label htmlFor="username">Username</label>
                             <Field id="username" type="text" name="username" placeholder="Your username" />
+                            
+                            {/* Username Errors */}
                             {
                                 errors.username && touched.username && 
                                 (
@@ -78,6 +80,8 @@ const RegisterForm = () => {
 
                             <label htmlFor="email">Email</label>
                             <Field id="email" type="email" name="email" placeholder="example@email.com" />
+
+                            {/* Email Errors */}
                             {
                                 errors.email && touched.email && 
                                 (
@@ -92,6 +96,7 @@ const RegisterForm = () => {
                                 placeholder="password"
                                 type='password'
                             />
+                            {/* Password Errors */}
                             {
                                 errors.password && touched.password && 
                                 (
@@ -106,6 +111,7 @@ const RegisterForm = () => {
                                 placeholder="confirm passsword"
                                 type='password'
                             />
+                            {/* Confirm Password Errors */}
                             {
                                 errors.confirm && touched.confirm && 
                                 (

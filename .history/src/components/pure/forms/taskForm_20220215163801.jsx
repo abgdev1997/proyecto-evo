@@ -32,13 +32,13 @@ const TaskForm = ({add, length}) => {
                 <input ref={nameRef} id='inputName' type='text' className='form-control form-control-lg' required autoFocus placeholder='Task Name'></input>
                 <input ref={descriptionRef} id='descriptionName' type='text' className='form-control form-control-lg'required placeholder='Task Description'></input>
                 <select className='form-control form-control-lg' ref={levelRef} defaultValue={LEVELS.NORMAL} id='selectLevel'>
-                    <option value={LEVELS.NORMAL} style={{color:'blue'}}>
+                    <option value={LEVELS.NORMAL}>
                         NORMAL
                     </option>
-                    <option value={LEVELS.URGENT} style={{color:'yellow'}}>
+                    <option value={LEVELS.URGENT}>
                         URGENT
                     </option>
-                    <option value={LEVELS.BLOCKING} style={{color:'tomato'}}>
+                    <option value={LEVELS.BLOCKING}>
                         BLOCKING
                     </option>
                 </select>

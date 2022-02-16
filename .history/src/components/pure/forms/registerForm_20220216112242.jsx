@@ -9,25 +9,22 @@ const RegisterForm = () => {
     let user = new User();
 
     const initialValues = {
-        username: '',
+        userName: '',
         email: '',
         password: '',
         confirm: '',
-        role: ROLES.USER
+        role: ROLES.USER,
     }
 
-    const registerSchema = Yup.object().shape(
+    const registerSchema = Yup.object.shape(
         {
-            username: Yup.string()
-                .min(6, 'Username too short')
-                .max(12, 'Username too long')
-                .required('Username is required'),
+            userName: Yup.string()
+                .min(6, 'UserName too short')
+                .max(12, 'UserName too long')
+                .required('UserName is required'),
             email: Yup.string()
                 .email('Invalid email format')
                 .required('Email is required'),
-            role: Yup.string()
-                .oneOf([ROLES.USER, ROLES.ADMIN], 'You must select a Role: User / Admin')
-                .required('Role is required'),
             password: Yup.string()
                 .min(8, 'Password too short')
                 .required('Password is required'),
@@ -36,48 +33,50 @@ const RegisterForm = () => {
                     is: value => (value && value.length > 0 ? true : false),
                     then: Yup.string().oneOf(
                         [Yup.ref("password")],
-                        '¡Passwords must match!'
+                        '¡Password must match!'
                     )
-                }).required('You must confirm the password')
+                }).required('You must confirm the password'),
+            role: Yup.string()
+                .oneOf([ROLES.USER, ROLES.ADMIN], 'You must select a Role: User / Admin')               
         }
     )
 
     const submit = (values) => {
-        alert('Register user')
+        alert('Register User');
     }
 
     return (
         <div>
             <h4>Register Form</h4>
             <Formik
-                initialValues = {initialValues}
-                // *** Yup Validation Schema ***
-                validationSchema = {registerSchema}
-                // ** onSubmit Event
+                initialValues={initialValues}
+                validationSchema={registerSchema}
                 onSubmit={async (values) => {
                     await new Promise((r) => setTimeout(r, 1000));
-                    alert(JSON.stringify(values, null, 2))
+                    alert(JSON.stringify(values, null, 2));
                 }}
             >
 
-            {({ values,
+                    {({ values,
                     touched,
                     errors,
                     isSubmitting,
                     handleChange,
                     handleBlur }) => (
                         <Form>
-                            <label htmlFor="username">Username</label>
-                            <Field id="username" type="text" name="username" placeholder="Your username" />
+                            <label htmlFor="userName">UserName</label>
+                            <Field id="userName" type="text" name="userName" placeholder="Insert your new UserName" />
+                            
                             {
-                                errors.username && touched.username && 
+                                errors.userName && touched.userName && 
                                 (
-                                    <ErrorMessage name="username" component='div'></ErrorMessage>
+                                    <ErrorMessage name="userName" component='div'></ErrorMessage>
                                 )
                             }
 
                             <label htmlFor="email">Email</label>
-                            <Field id="email" type="email" name="email" placeholder="example@email.com" />
+                            <Field id="email" type="email" name="email" placeholder="Insert your Email" />
+                            
                             {
                                 errors.email && touched.email && 
                                 (
@@ -89,7 +88,7 @@ const RegisterForm = () => {
                             <Field
                                 id="password"
                                 name="password"
-                                placeholder="password"
+                                placeholder="Password"
                                 type='password'
                             />
                             {
@@ -98,12 +97,12 @@ const RegisterForm = () => {
                                     <ErrorMessage name="password" component='div'></ErrorMessage>
                                 )
                             }
-
-                            <label htmlFor="confirm">Password</label>
+                            
+                            <label htmlFor="confirm">Confirm Password</label>
                             <Field
                                 id="confirm"
                                 name="confirm"
-                                placeholder="confirm passsword"
+                                placeholder="Confirm password"
                                 type='password'
                             />
                             {
@@ -112,14 +111,11 @@ const RegisterForm = () => {
                                     <ErrorMessage name="confirm" component='div'></ErrorMessage>
                                 )
                             }
-
-                            <button type="submit">Register Account</button>
-                            {isSubmitting ? (<p>Sending your credentials...</p>): null}
-
+                        
+                            <button type="submit">Register</button>
+                            {isSubmitting ? (<p>Register your credentials...</p>): null}
                         </Form>
-                    )
-            }
-
+                    )}
             </Formik>
         </div>
     );

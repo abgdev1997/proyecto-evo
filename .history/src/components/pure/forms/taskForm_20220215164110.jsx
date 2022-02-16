@@ -35,10 +35,10 @@ const TaskForm = ({add, length}) => {
                     <option value={LEVELS.NORMAL} style={{color:'blue'}}>
                         NORMAL
                     </option>
-                    <option value={LEVELS.URGENT} style={{color:'yellow'}}>
+                    <option value={LEVELS.URGENT}>
                         URGENT
                     </option>
-                    <option value={LEVELS.BLOCKING} style={{color:'tomato'}}>
+                    <option value={LEVELS.BLOCKING}>
                         BLOCKING
                     </option>
                 </select>

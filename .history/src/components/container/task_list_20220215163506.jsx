@@ -21,9 +21,7 @@ const TaskList = () => {
     //Control de ciclo de vida del componente
     useEffect(() => {
         console.log('Task State has been modified');
-        setInterval(()=>{
-            setLoading(false);
-        }, 1500);
+        setLoading(false);
         return () => {
             console.log('TaskList component is going to unmount');
         };
@@ -113,7 +111,7 @@ const TaskList = () => {
                 data-mdb-perfect-scrollbar='true'
                 style={ {position: 'relative', height:'400px', backgroundColor:'white'}
                 }>
-                    {loading ? (<p style={{color: 'gray'}}>Loading tasks...</p>) : (<TasksTable/>)}
+                    <TasksTable></TasksTable>
                 </div>
             </div>
             <TaskForm add={addTask} length={tasks.length}></TaskForm>

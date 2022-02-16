@@ -48,7 +48,7 @@ const RegisterForm = () => {
 
     return (
         <div>
-            <h4>Register Form</h4>
+            <h4>Register Formik</h4>
             <Formik
                 initialValues = {initialValues}
                 // *** Yup Validation Schema ***
