@@ -45,7 +45,7 @@ function AppRoutingOne() {
         <main>
           <Switch>
             <Route exact path='/' component={ Homepage } />
-            <Route exact path='/online-state' component={ Statepage } />
+            <Route exact path='/online' component={ Statepage } />
             <Route path='/login' component={ Loginpage }>
             {
                 logged ? 

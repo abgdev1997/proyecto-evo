@@ -8,6 +8,7 @@ const Taskdetailpage = ({task}) => {
         <div>
             <h1>Tasks Details: {id}</h1>
             <h2>{task.name}</h2>
+            <h2>{task.name}</h2>
             <h2>{task.description}</h2>
         </div>
     );

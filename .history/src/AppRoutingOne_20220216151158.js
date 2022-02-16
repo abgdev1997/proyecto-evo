@@ -7,7 +7,6 @@ import Taskspage from './routes/tasks/TasksPage';
 import Taskdetailpage from './routes/tasks/TaskDetailPage'
 import Loginpage from './routes/auth/LoginPage';
 import { useEffect } from 'react'
-import Statepage from './routes/Home/StatePage';
 
 function AppRoutingOne() {
 
@@ -45,7 +44,6 @@ function AppRoutingOne() {
         <main>
           <Switch>
             <Route exact path='/' component={ Homepage } />
-            <Route exact path='/online-state' component={ Statepage } />
             <Route path='/login' component={ Loginpage }>
             {
                 logged ? 

@@ -7,24 +7,10 @@ import Taskspage from './routes/tasks/TasksPage';
 import Taskdetailpage from './routes/tasks/TaskDetailPage'
 import Loginpage from './routes/auth/LoginPage';
 import { useEffect } from 'react'
-import Statepage from './routes/Home/StatePage';
 
 function AppRoutingOne() {
 
   let logged = false;
-
-  let taskList = [
-    {
-      id: 1,
-      name: 'Task 1',
-      description: 'My firs task'
-    },
-    {
-      id: 2,
-      name: 'Task 2',
-      description: 'My second task'
-    }
-  ]
 
   useEffect(() => {
     logged = localStorage.getItem('credentials');
@@ -38,14 +24,11 @@ function AppRoutingOne() {
           <Link to='/'>|| Home |</Link>
           <Link to='/about'>| About |</Link>
           <Link to='/faqs'>| Faqs |</Link>
-          <Link to='/login'>| Login |</Link>
-          <Link to='/task/1'>| Task 1 |</Link>
-          <Link to='/task/2'>| Task 2 ||</Link>
+          <Link to='/login'>| Login ||</Link>
         </aside>
         <main>
           <Switch>
             <Route exact path='/' component={ Homepage } />
-            <Route exact path='/online-state' component={ Statepage } />
             <Route path='/login' component={ Loginpage }>
             {
                 logged ? 
@@ -72,15 +55,7 @@ function AppRoutingOne() {
               }
             </Route>
             <Route path='/tasks' component={ Taskspage } />
-            <Route 
-              exact path='/task/:id' 
-              render={
-                ({match}) => (
-                    <Taskdetailpage task={taskList[match.params.id-1]}/>
-                )
-              }>
-
-            </Route>
+            <Route path='/task/:id' component={ Taskdetailpage } />
             <Route component={ NotFoundPage } />
           </Switch>
         </main>

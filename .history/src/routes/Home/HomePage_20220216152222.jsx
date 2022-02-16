@@ -10,7 +10,7 @@ const Homepage = () => {
 
     const navigateProps = (path) => {
         history.push({
-            pathname: path,
+            path: path,
             search: '?online=true',
             state:{
                 online: true

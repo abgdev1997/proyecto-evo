@@ -4,8 +4,8 @@ import { useLocation } from 'react-router-dom';
 const Statepage = () => {
     const location = useLocation();
 
-    console.log('Location.state.online', location.state.online);
-    console.log('Location.search', location.search);
+    console.log(location.state.online);
+    console.log(location.search);
 
     return (
         <div>

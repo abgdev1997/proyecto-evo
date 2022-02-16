@@ -10,7 +10,7 @@ const Homepage = () => {
 
     const navigateProps = (path) => {
         history.push({
-            pathname: path,
+            path: path,
             search: '?online=true',
             state:{
                 online: true
@@ -24,7 +24,7 @@ const Homepage = () => {
             <button onClick={ () => navigate('/profile') }>
                 Go to Profile
             </button>
-            <button onClick={ () => navigateProps('/online-state') }>
+            <button onClick={ () => navigate('/online-state') }>
                 Go to Page with State
             </button>
         </div>
